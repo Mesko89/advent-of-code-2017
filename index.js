@@ -16,11 +16,13 @@ function leftPad(string, length, paddingChar) {
   return string;
 }
 
-const days = Array.from({ length: 1 }).map((_, i) => leftPad(i + 1, 2, 0));
+const days = Array.from({ length: 2 }).map((_, i) => leftPad(i + 1, 2, 0));
 
 async function bootstrap() {
   const inputs = await Promise.all(days.map(async d => {
-    return (await loadInput(`./inputs/${d}.txt`)).split(/[\r\n]+/);
+    return (await loadInput(`./inputs/${d}.txt`))
+      .split(/[\r\n]+/)
+      .filter(r => Boolean(r));
   }));
   const parts = days.map(d => require(`./solutions/day-${d}`));
   const solutions = parts.map((p, i) => [p.part1(inputs[i]), p.part2(inputs[i])]);
