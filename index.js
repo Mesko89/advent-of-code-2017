@@ -16,7 +16,7 @@ function leftPad(string, length, paddingChar) {
   return string;
 }
 
-const days = Array.from({ length: 2 }).map((_, i) => leftPad(i + 1, 2, 0));
+const days = Array.from({ length: 3 }).map((_, i) => leftPad(i + 1, 2, 0));
 
 async function bootstrap() {
   const inputs = await Promise.all(days.map(async d => {
