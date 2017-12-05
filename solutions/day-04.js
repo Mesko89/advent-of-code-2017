@@ -6,22 +6,9 @@ function isValid(passphrase) {
 }
 
 function isValidExtraSecure(passphrase) {
-  function countChars(word) {
-    return Array.from(word)
-      .reduce((charMap, char) => {
-        if (!(char in charMap)) {
-          charMap[char] = 0;
-        }
-        charMap[char]++;
-        return charMap;
-      }, {})
-  }
   function wordsAreSimilar(word1, word2) {
-    const toHash = (map) => Object.keys(map)
-      .sort()
-      .map(key => `${key}${map[key]}`)
-      .reduce((string, val) => string + val, '');
-    return toHash(countChars(word1)) === toHash(countChars(word2));
+    const sortWord = (word) => Array.from(word).sort().join('');
+    return sortWord(word1) === sortWord(word2);
   }
   return passphrase
     .split(/\s+/)
