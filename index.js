@@ -7,16 +7,7 @@ function loadInput(file) {
   }))
 }
 
-function leftPad(string, length, paddingChar) {
-  if (!string) return string;
-  string = string.toString();
-  if (string.length >= length) return string;
-  while (string.length !== length)
-    string = paddingChar + string;
-  return string;
-}
-
-const days = Array.from({ length: 9 }).map((_, i) => leftPad(i + 1, 2, 0));
+const days = Array.from({ length: 10 }).map((_, i) => (i + 1).toString().padStart(2, '0'));
 
 async function bootstrap() {
   try {
