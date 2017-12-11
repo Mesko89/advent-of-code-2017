@@ -20,7 +20,7 @@ describe('Day 10 - Part 1', () => {
 
 });
 
-fdescribe('Day 10 - Part 2', () => {
+describe('Day 10 - Part 2', () => {
 
   it('works for empty string', () => {
     expect(part2([''])).toBe('a2582a3a0e66e6e86e3812dcb672a272');

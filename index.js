@@ -7,7 +7,7 @@ function loadInput(file) {
   }))
 }
 
-const days = Array.from({ length: 10 }).map((_, i) => (i + 1).toString().padStart(2, '0'));
+const days = Array.from({ length: 11 }).map((_, i) => (i + 1).toString().padStart(2, '0'));
 
 async function bootstrap() {
   try {
