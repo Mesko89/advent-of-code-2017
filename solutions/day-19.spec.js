@@ -2,8 +2,8 @@ const { part1, part2 } = require('./day-19');
 
 describe('Day 19 - Part 1', () => {
 
-  it('works for smaller problem', async () => {
-    expect(await part1([
+  it('works for smaller problem', () => {
+    expect(part1([
       '     |          ',
       '     |  +--+    ',
       '     A  |  C    ',
@@ -15,10 +15,10 @@ describe('Day 19 - Part 1', () => {
 
 });
 
-xdescribe('Day 19 - Part 2', () => {
+describe('Day 19 - Part 2', () => {
 
-  it('works for smaller problem', async () => {
-    expect(await part1([
+  it('works for smaller problem', () => {
+    expect(part2([
       '     |          ',
       '     |  +--+    ',
       '     A  |  C    ',
