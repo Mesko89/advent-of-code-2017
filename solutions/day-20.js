@@ -11,17 +11,6 @@ function parseParticles(inputLines) {
   return inputLines.map(toParticle);
 }
 
-// function distanceAtTime(particle, time) {
-//   return particle.position.reduce((total, position, index) => {
-//     return total + 
-//       Math.abs(
-//         position + 
-//         ((particle.velocity[index] + particle.acceleration[index]) * (time - 1)) + 
-//         (particle.acceleration[index] * (time - 1) * (time - 1) / 2)
-//       );
-//   }, 0);
-// }
-
 function arrayAdd(arr1, arr2) {
   return arr1.map((v, i) => v + arr2[i]);
 }
