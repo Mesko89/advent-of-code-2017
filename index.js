@@ -9,7 +9,7 @@ function loadInput(file) {
 
 const days = process.argv.length > 2 
   ? process.argv.slice(2)
-  : Array.from({ length: 19 }).map((_, i) => (i + 1).toString().padStart(2, '0'));
+  : Array.from({ length: 24 }).map((_, i) => (i + 1).toString().padStart(2, '0'));
 
 async function bootstrap() {
   try {
@@ -19,12 +19,11 @@ async function bootstrap() {
         .filter(r => Boolean(r));
     }));
     const parts = days.map(d => require(`./solutions/day-${d}`));
-    const solutions = parts.map((p, i) => [p.part1(inputs[i]), p.part2(inputs[i])]);
-    for (let i = 0; i < solutions.length; i++) {
+    for (let i = 0; i < parts.length; i++) {
       console.log(`Solutions for day "${days[i]}":`);
-      const p1Solution = await solutions[i][0];
+      const p1Solution = await parts[i].part1(inputs[i]);
       console.log(`  Part 1: ${p1Solution}`);
-      const p2Solution = await solutions[i][1];
+      const p2Solution = await parts[i].part2(inputs[i])
       console.log(`  Part 2: ${p2Solution}`);
     }
   } catch (ex) {
