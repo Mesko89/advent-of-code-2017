@@ -9,7 +9,7 @@ function loadInput(file) {
 
 const days = process.argv.length > 2 
   ? process.argv.slice(2)
-  : Array.from({ length: 24 }).map((_, i) => (i + 1).toString().padStart(2, '0'));
+  : Array.from({ length: 25 }).map((_, i) => (i + 1).toString().padStart(2, '0'));
 
 async function bootstrap() {
   try {
